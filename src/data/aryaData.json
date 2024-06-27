@@ -1,0 +1,68 @@
+{
+  "header": {
+    "title": "Arya's List",
+    "id": "AppId"
+  },
+  "names": [
+    {
+      "name": "Joffrey Baratheon",
+      "died_by": "poisoned by Olenna Tyrell and Littlefinger",
+      "score" : 0
+    },
+    {
+      "name": "Tywin Lannister",
+      "died_by": "shot by Tyrion Lannister",
+      "score" : 0
+    },
+    {
+      "name": "Meryn Trant",
+      "died_by": "killed by Arya Stark",
+      "score" : 0
+    },
+    {
+      "name": "Ilyn Payne",
+      "died_by": "unknown",
+      "score" : 0
+    },
+    {
+      "name": "Walder Frey",
+      "died_by": "killed by Arya Stark",
+      "score" : 0
+    },
+    {
+      "name": "Littlefinger",
+      "died_by": "executed by Arya Stark",
+      "score" : 0
+    },
+    {
+      "name": "Thoros",
+      "died_by": "killed by the dead",
+      "score" : 0
+    },
+    {
+      "name": "Beric Dondarrion",
+      "died_by": "killed by the dead",
+      "score" : 0
+    },
+    {
+      "name": "Melisandre",
+      "died_by": "died of old age",
+      "score" : 0
+    },
+    {
+      "name": "The Hound",
+      "died_by": "died during a duel with The Mountain",
+      "score" : 0
+    },
+    {
+      "name": "The Mountain",
+      "died_by": "died during a duel with The Hound",
+      "score" : 0
+    },
+    {
+      "name": "Cersei Lannister",
+      "died_by": "crushed by falling debris",
+      "score" : 0
+    }
+  ]
+}
