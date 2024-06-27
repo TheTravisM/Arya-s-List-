@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './stats.scss';
 
 const Stats = (props) => {
   const { names } = props;

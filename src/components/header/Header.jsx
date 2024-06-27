@@ -1,5 +1,6 @@
 import React from 'react';
-import Stats from './Stats';
+import Stats from '../stats/Stats';
+import './Header.scss';
 
 const Header = (props) => {
   const { id, title, names } = props

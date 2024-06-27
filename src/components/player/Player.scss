@@ -1,0 +1,57 @@
+.player {
+  display: flex;
+  font-size: 1.2em;
+  border-bottom: solid 2px #222;
+  letter-spacing: 2px;
+  background-color: #999;
+}
+
+.player:hover {
+  background-color: #777;
+  box-shadow: -1px 1px 20px 9px rgba(0, 0, 0, .5);
+  position: relative;
+  z-index: 10;
+  transform: scale(1.01);
+  border-radius: 4px;
+}
+
+.player:hover .player-name {
+  color: maroon;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
+}
+
+.player:last-of-type {
+  border-bottom-color: #D4CAFF;
+}
+
+.player:hover .remove-player {
+  visibility: visible;
+}
+
+.player-name,
+.counter-score {
+  color: #333;
+}
+
+.player-name {
+  flex-grow: 1;
+  line-height: 3.5em;
+  padding-left: 10px;
+}
+
+.remove-player {
+  font-size: 1.15em;
+  border: none;
+  outline: none;
+  visibility: hidden;
+  color: maroon;
+  cursor: pointer;
+  margin: 0;
+  padding: 0 0 0 10px;
+  background: none;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
+}
+
+.remove-player:hover + .player-name {
+  text-decoration: line-through;
+}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import aryaData from "../data/aryaData.json";
-import Header from "./Header";
-import Player from "./Player";
+import Header from "./header/Header";
+import Player from "./player/Player";
 
 const App = () => {
   const [headerTitle, setHeaderTitle] = useState("");

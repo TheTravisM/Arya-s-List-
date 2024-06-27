@@ -1,0 +1,21 @@
+.stats,
+.stopwatch {
+  width: 170px;
+}
+
+.stats {
+  display: flex;
+  margin: 0 0 0 28px;
+  font-weight: normal;
+}
+
+.stats td:first-child {
+  text-align: right;
+  font-weight: normal;
+  letter-spacing: 2px;
+  font-size: .7em;
+}
+
+.stats td:last-child {
+  text-align: left;
+}

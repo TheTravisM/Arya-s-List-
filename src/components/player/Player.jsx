@@ -1,5 +1,7 @@
 import React from 'react';
-import Counter from './Counter';
+import Counter from '../counter/Counter';
+import './Player.scss'
+
 const Player = (props) => {
   const { 
     id, 
