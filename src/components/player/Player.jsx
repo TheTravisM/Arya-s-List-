@@ -1,19 +1,21 @@
 import React from 'react';
 import Counter from '../counter/Counter';
-import './Player.scss'
+import './player.scss'
 
 const Player = (props) => {
   const { 
     id, 
-    key, 
+    //key, 
     name, 
     diedBy, 
-    removeName, 
     score,
+    removeName, 
     changeScore
   } = props;
   return (
-    <div id={id} key={key} className="player">
+    <div 
+      id={id} 
+      className="player">
       <button 
         className="remove-player" 
         onClick={() => removeName(id)}>

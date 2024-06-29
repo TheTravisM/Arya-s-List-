@@ -2,31 +2,33 @@ import React, { useEffect, useState } from "react";
 import aryaData from "../data/aryaData.json";
 import Header from "./header/Header";
 import Player from "./player/Player";
+import AddPersonForm from "./addPersonForm/AddPersonForm";
 
 const App = () => {
   const [headerTitle, setHeaderTitle] = useState("");
   const [headerId, setHeaderId] = useState("");
-  const [names, setNames] = useState([]);
-  const [namesTotal, setNamesTotal] = useState(0);
+  const [people, setPeople] = useState([]);
+  //const [peopleTotal, setPeopleTotal] = useState(0);
+  const [nextPersonId, setNextPersonId] = useState(5);
 
   useEffect(() => {
     setHeaderTitle(aryaData.header.title);
     setHeaderId(aryaData.header.id);
-    setNames(aryaData.names);
-    setNamesTotal(aryaData.names.length);
+    setPeople(aryaData.people);
+    //setPeopleTotal(aryaData.people.length);
   }, []);
 
-  useEffect(() => {
-    setNamesTotal(names.length);
-  }, [names]);
+  // useEffect(() => {
+  //   setPeopleTotal(people.length);
+  // }, [people]);
 
   const handleRemoveName = (index) => {
-    setNames((prevNames) => prevNames.filter((_, name) => name !== index));
+    setPeople((prevPeople) => prevPeople.filter((_, name) => name !== index));
   };
 
   const handleScoreChange = (delta, id) => {
-    setNames(prevNames =>
-      prevNames.map((name, index) => {
+    setPeople(prevPeople =>
+      prevPeople.map((name, index) => {
         if (index === id) {
           return {
             ...name, 
@@ -38,16 +40,27 @@ const App = () => {
     );
   };
 
+  const handleAddPerson = (name) => {
+    setPeople(prevPeople => [
+    ...prevPeople,
+    {
+      name,
+      score: 0,
+      //id: nextPersonId
+    }])
+    setNextPersonId(prevId => prevId + 1);
+  };
+
   return (
     <section className="aryas-list">
       <Header 
         id={headerId} 
         title={headerTitle} 
-        names={names} 
+        people={people} 
       />
 
       {/* Name list */}
-      {names.map((person, index) => (
+      {people.map((person, index) => (
         <Player
           id={index}
           key={index}
@@ -58,6 +71,10 @@ const App = () => {
           changeScore={handleScoreChange}
         />
       ))}
+
+      <AddPersonForm
+        addPerson={handleAddPerson}
+      />
     </section>
   );
 };

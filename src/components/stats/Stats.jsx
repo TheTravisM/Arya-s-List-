@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import './stats.scss';
 
 const Stats = (props) => {
-  const { names } = props;
-  const namesTotal = names.length;
-  const scoreTotal = names.reduce((total, name) => {
+  const { people } = props;
+  const peopleTotal = people.length;
+  const scoreTotal = people.reduce((total, name) => {
     return total + name.score
   }, 0);
 
@@ -13,7 +13,7 @@ const Stats = (props) => {
       <tbody>
         <tr>
           <td>Names:</td>
-          <td>{namesTotal}</td>
+          <td>{peopleTotal}</td>
         </tr>
         <tr>
           <td>Total Score:</td>
