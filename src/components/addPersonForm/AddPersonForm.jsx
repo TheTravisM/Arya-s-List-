@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import './addPersonForm.scss'
 
 const AddPersonForm = (props) => {
-  //const { addPerson } = props;
-  const [value, setValue] = useState("");
+  const personInput = useRef();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.addPerson(value);
-    setValue("");
+    props.addPerson(personInput.current.value);
+    event.currentTarget.reset();
   }
 
   return (
@@ -16,12 +15,11 @@ const AddPersonForm = (props) => {
       className='addPersonForm'
       onSubmit = {(event) => handleSubmit(event)}
     >
-      {console.log('value : ', value)}
+      {console.log(personInput)}
       <input
         type='text'
-        value={value}
+        ref={personInput}
         placeholder = "Enter a person's name"
-        onChange={(event) => setValue(event.target.value)}
       />
       <input
         type='submit'

@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { memo } from "react";
 import Counter from '../counter/Counter';
 import './player.scss'
 
 const Player = (props) => {
   const { 
     id, 
-    //key, 
     name, 
     diedBy, 
     score,
@@ -16,16 +15,27 @@ const Player = (props) => {
     <div 
       id={id} 
       className="player">
+        {console.log(name + ' has been rendered')}
       <button 
         className="remove-player" 
         onClick={() => removeName(id)}>
         ✖
       </button>
-      <span className="player-name">{name}</span>
-      {/* <span>{diedBy}</span> */}
-      <Counter id={id} score={score} changeScore={changeScore} />
+      <span className="player-name">
+        {name}
+        {/* <span>{diedBy}</span> */}
+      </span>
+
+      <Counter 
+        id={id} 
+        score={score} 
+        changeScore={changeScore} 
+      />
     </div>
   );
 }
 
-export default Player;
+const arePlayerPropsEqual = (prevProps, nextProps) => {
+  return prevProps.score === nextProps.score;
+}
+export default memo(Player, arePlayerPropsEqual);

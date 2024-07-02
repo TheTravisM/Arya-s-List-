@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import aryaData from "../data/aryaData.json";
 import Header from "./header/Header";
 import Player from "./player/Player";
@@ -8,19 +8,13 @@ const App = () => {
   const [headerTitle, setHeaderTitle] = useState("");
   const [headerId, setHeaderId] = useState("");
   const [people, setPeople] = useState([]);
-  //const [peopleTotal, setPeopleTotal] = useState(0);
-  const [nextPersonId, setNextPersonId] = useState(5);
+  const nextPersonId = useRef(5);
 
   useEffect(() => {
     setHeaderTitle(aryaData.header.title);
     setHeaderId(aryaData.header.id);
     setPeople(aryaData.people);
-    //setPeopleTotal(aryaData.people.length);
   }, []);
-
-  // useEffect(() => {
-  //   setPeopleTotal(people.length);
-  // }, [people]);
 
   const handleRemoveName = (index) => {
     setPeople((prevPeople) => prevPeople.filter((_, name) => name !== index));
@@ -46,9 +40,8 @@ const App = () => {
     {
       name,
       score: 0,
-      //id: nextPersonId
+      id: nextPersonId.current++
     }])
-    setNextPersonId(prevId => prevId + 1);
   };
 
   return (

@@ -8,7 +8,6 @@ const Stopwatch = (props) => {
   const [elapsedTime, setElapsedTime] = useState(0);
 
   useEffect(() => {
-    console.log('Running Side Effect');
     let id;
     if (isRunning){
       id = setInterval(()=> {
@@ -18,18 +17,19 @@ const Stopwatch = (props) => {
     }
     return () => {
       clearInterval(id);
-      console.log("Clean Up");
     }
   },[isRunning])
 
-  const handleStart = (props) => {
+  const handleStart = () => {
     setIsRunning((prevValue) => !prevValue);
   }
 
-  const handleReset = (props) => {
+  const handleReset = () => {
     setElapsedTime(0);
     setIsRunning(false);
   }
+
+  const startBtnText = isRunning ? "Stop" : "Start";
 
   return (
   <section className="stopwatch">
@@ -41,7 +41,7 @@ const Stopwatch = (props) => {
       className='start-btn'
       onClick={handleStart}
     >
-      {isRunning ? "Stop" : "Start"}
+      {startBtnText}
     </button> 
     <button
       className='reset-btn'
