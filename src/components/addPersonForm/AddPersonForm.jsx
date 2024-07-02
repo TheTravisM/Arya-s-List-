@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import PropTypes from 'prop-types';
 import './addPersonForm.scss'
 
 const AddPersonForm = (props) => {
@@ -28,4 +29,9 @@ const AddPersonForm = (props) => {
     </form>
   );
 }
+
+AddPersonForm.propTypes = {
+  addPerson: PropTypes.func.isRequired
+};
+
 export default AddPersonForm;

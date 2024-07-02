@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import './Counter.scss'
 
 const Counter = (props) => {
-
   const {
     id,
     score,
@@ -25,4 +25,11 @@ const Counter = (props) => {
     </div>
   );
 }
+
+Counter.propTypes = {
+  id: PropTypes.number,
+  score: PropTypes.number,
+  changeScore: PropTypes.func
+};
+
 export default Counter;

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import './stats.scss';
 
 const Stats = (props) => {
@@ -23,4 +24,11 @@ const Stats = (props) => {
     </table>
   );
 };
+
+Stats.propTypes = {
+  players: PropTypes.arrayOf(PropTypes.shape({
+    score: PropTypes.number
+  })).isRequired
+}
+
 export default Stats;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Stats from '../stats/Stats';
 import Stopwatch from '../stopwatch.js/Stopwatch';
 import './header.scss';
@@ -12,6 +13,15 @@ const Header = (props) => {
     <Stopwatch/>
     </header>
   );
+}
+
+Header.propTypes = {
+  title: PropTypes.string,
+  players: PropTypes.arrayOf(PropTypes.object)
+}
+
+Header.defaultProps = {
+  title: "List Of Names"
 }
 
 export default Header;

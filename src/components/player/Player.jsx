@@ -1,4 +1,5 @@
 import React, { memo } from "react";
+import PropTypes from 'prop-types';
 import Counter from '../counter/Counter';
 import './player.scss'
 
@@ -15,7 +16,6 @@ const Player = (props) => {
     <div 
       id={id} 
       className="player">
-        {console.log(name + ' has been rendered')}
       <button 
         className="remove-player" 
         onClick={() => removeName(id)}>
@@ -33,6 +33,14 @@ const Player = (props) => {
       />
     </div>
   );
+}
+
+Player.propTypes = {
+  name: PropTypes.string.isRequired,
+  score: PropTypes.number.isRequired,
+  id: PropTypes.number.isRequired,
+  removeName: PropTypes.func.isRequired,
+  changeScore: PropTypes.func.isRequired,
 }
 
 const arePlayerPropsEqual = (prevProps, nextProps) => {
