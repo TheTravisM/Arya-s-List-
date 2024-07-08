@@ -9,12 +9,18 @@ const App = () => {
   const [headerId, setHeaderId] = useState("");
   const [people, setPeople] = useState([]);
   const nextPersonId = useRef(5);
+  const [highScore, setHighScore] = useState();
 
   useEffect(() => {
     setHeaderTitle(aryaData.header.title);
     setHeaderId(aryaData.header.id);
     setPeople(aryaData.people);
   }, []);
+
+  useEffect(() => {
+    const scores = people.map(people => people.score);
+    setHighScore(Math.max(...scores));
+  }, [people]);
 
   const handleRemoveName = (index) => {
     setPeople((prevPeople) => prevPeople.filter((_, name) => name !== index));
@@ -62,6 +68,7 @@ const App = () => {
           score={person.score}
           removeName={handleRemoveName}
           changeScore={handleScoreChange}
+          isHighScore={person.score === highScore && highScore !== 0}
         />
       ))}
 
