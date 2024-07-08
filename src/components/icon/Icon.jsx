@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Icon.scss'
+import './Icon.scss';
 
 const Icon = (props) => {
   const { isHighScore } = props

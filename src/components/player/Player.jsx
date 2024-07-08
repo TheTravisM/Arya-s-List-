@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import PropTypes from 'prop-types';
 import Counter from '../counter/Counter';
 import Icon from "../icon/Icon";
-import './Player.scss'
+import './Player.scss';
 
 const Player = (props) => {
   const { 
