@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import './stats.scss';
+import './Stats.scss';
 
 const Stats = (props) => {
   const { people } = props;

@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import PropTypes from 'prop-types';
-import './addPersonForm.scss'
+import './AddPersonForm.scss'
 
 const AddPersonForm = (props) => {
   const personInput = useRef();

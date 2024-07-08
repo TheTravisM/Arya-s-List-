@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import './stopwatch.scss'
+import './Stopwatch.scss'
 
 const Stopwatch = (props) => {
   const { } = props;
