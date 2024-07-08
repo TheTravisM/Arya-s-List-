@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Stats from '../stats/Stats';
 import Stopwatch from '../stopwatch.js/Stopwatch';
-//import './header.scss';
-import '../header/header.scss'
+import './Header.scss'
 
 const Header = (props) => {
   const { id, title, people } = props
